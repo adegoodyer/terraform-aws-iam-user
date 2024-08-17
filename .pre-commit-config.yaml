@@ -6,3 +6,5 @@ repos:
       - id: terraform_tflint
       - id: terraform_validate
       - id: terraform_docs
+        args: ["markdown", "table"]
+
