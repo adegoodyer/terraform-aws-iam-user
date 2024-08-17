@@ -4,12 +4,21 @@
 - [terraform-aws-iam-user](#terraform-aws-iam-user)
   - [Overview](#overview)
   - [Usage](#usage)
+  - [Retrieve Secret Access Key](#retrieve-secret-access-key)
   - [Required Permissions](#required-permissions)
-  - [Terraform Docs](#terraform-docs)
+- [Terraform Docs](#terraform-docs)
+  - [Requirements](#requirements)
+  - [Providers](#providers)
+  - [Modules](#modules)
+  - [Resources](#resources)
+  - [Inputs](#inputs)
+  - [Outputs](#outputs)
 <!--toc:end-->
 
 ## Overview
 Terraform module to create AWS IAM user with access keys and attached policies.
+
+> Use roles (and OIDC) where possible, however unavoidable in certain situations.
 
 ## Usage
 ```hcl
@@ -42,6 +51,14 @@ output "username" {
 }
 ```
 
+## Retrieve Secret Access Key
+```bash
+# cli
+tf output --raw aws_secret_access_key
+
+# also held in tf state file
+```
+
 ## Required Permissions
 ```json
 {
@@ -72,6 +89,8 @@ output "username" {
     ]
 }
 ```
+
+# Terraform Docs
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
